@@ -17,6 +17,11 @@ module.exports.signin=function(req,res){
 
 //get the signup data
 
-module.exports.create=function(res,req){
-    
+module.exports.create=function(req,res){
+
+}
+//sign in and create a session for the user
+
+module.exports.createSession=function(req,res){
+
 }
