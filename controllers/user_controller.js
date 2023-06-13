@@ -1,8 +1,20 @@
 const User=require('../models/user');
 module.exports.profile=function(req,res){
-    return res.render('user_profile',{
-      title:'User Profile'
-    });
+    if(req.cookies.user_id){
+      User.findById(req.cookies.user_id)
+      .then(user=>{
+        if(user){ 
+          return res.render('user_profile',{
+            title:"User-profile",
+            user:user
+          });
+        }
+        return res.redirect('/user/sign-in');
+      })
+    }
+    else{
+      return res.redirect('/user/sign-in');
+    }
 }
 
 //render the signup page
