@@ -5,4 +5,6 @@ console.log('user controller loaded');
 router.get('/profile',user_control.profile);
 router.get('/sign-up',user_control.signup);
 router.get('/sign-in',user_control.signin);
+router.post('/create',user_control.create);
+router.post('/create-session',user_control.createSession);
 module.exports=router; 
