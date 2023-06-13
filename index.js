@@ -8,6 +8,9 @@ const db=require('./config/mongoose');
 const session=require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/passport_local_strategy');
+const MongoStore = require('connect-mongo');
+
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static('./assets'));
@@ -22,6 +25,7 @@ app.set('layout extractScripts',true);
 app.set('view engine','ejs');
 app.set('views','./views');
 
+//mongo store is used to store the session cookie in the db
 app.use(session({
     name:'codeial',
     secret:'blashsomething',
@@ -29,7 +33,14 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge:(1000*60*100)
-    }
+    },
+    store: new MongoStore({
+        mongoUrl:'mongodb://127.0.0.1/codeial_development',
+        mongooseConnection: db,
+        autoRemove: 'disabled'
+    }, function (err) {
+        console.log(err || 'connect-mongodb setup done');
+    })
 }));
 //we need to tell the app to use passport
 app.use(passport.initialize());
@@ -43,5 +54,5 @@ app.listen(port,function(err){
     }
     else{
         console.log(`server is running on port: ${port}`);
-    }
+    } 
 })
