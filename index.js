@@ -31,6 +31,7 @@ app.use(session({
         maxAge:(1000*60*100)
     }
 }));
+//we need to tell the app to use passport
 app.use(passport.initialize());
 app.use(passport.session());
 //use express router

@@ -1,20 +1,8 @@
 const User=require('../models/user');
 module.exports.profile=function(req,res){
-    if(req.cookies.user_id){
-      User.findById(req.cookies.user_id)
-      .then(user=>{
-        if(user){ 
-          return res.render('user_profile',{
-            title:"User-profile",
-            user:user 
-          });
-        }
-        return res.redirect('/user/sign-in');
-      })
-    }
-    else{
-      return res.redirect('/user/sign-in');
-    }
+    return res.render('user_profile',{
+      title:'User Profile'
+    })
 }
 
 //render the signup page
