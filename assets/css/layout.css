@@ -1,4 +1,54 @@
+html{
+    height: 100%;
+}
 body{
     margin: 0px;
-    text-align: center;
+    height: 100%;
+}
+#layout-main{
+    height: 100%;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    padding: 0px 5px;
+    display: inline-block;
+}
+li a{
+    font-size: large;
+    letter-spacing: 0.9px;
+    color: aliceblue;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header{
+    background: linear-gradient(45deg, rgb(63, 27, 119) 60%, rgb(152, 82, 249) 100%);
+    padding: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#codeial-heading h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 189, 60);
+    letter-spacing: 1px;
+}
+footer{
+    padding: 0px 17px;
+    background: linear-gradient(135deg, rgb(94, 91, 91) 65%,rgb(133, 127, 127) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+footer div ul li a{
+    text-decoration: none;
+    color: rgb(193, 193, 193);
+}
+#footer-heading{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(208, 208, 208);
+}
+.fa-circle-c{
+    color: rgb(0, 136, 255);
 }
