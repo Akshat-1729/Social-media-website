@@ -23,7 +23,7 @@ li a{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 header{
-    background: linear-gradient(45deg, rgb(63, 27, 119) 60%, rgb(152, 82, 249) 100%);
+    background: linear-gradient(45deg, rgb(63, 27, 119) 60%, rgb(131, 51, 244) 100%);
     padding: 0px 10px;
     display: flex;
     flex-wrap: wrap;
