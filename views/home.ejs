@@ -5,5 +5,11 @@
         <textarea name="content" cols="30" rows="3" placeholder="Type here"></textarea>
         <button type="submit">Post</button> 
     </form>
-    
+    <div id="post-list">
+        <ul>
+            <%for(let i of posts){%>
+                <li>i.content</li>
+                <%}%>
+        </ul>
+    </div>
 </section>
