@@ -13,9 +13,12 @@
                 <p>
                     <li><%=i.content%></li>
                     <br>
+                    
                     <small>
                         <%=i.user.name%>
+                        <%= i.createdAt.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'Asia/Kolkata' }) %>
                     </small>
+                        
                 </p>
                 <%}%>
         </ul>
