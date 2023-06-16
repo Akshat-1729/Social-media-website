@@ -8,7 +8,13 @@
     <div id="post-list">
         <ul>
             <%for(let i of posts){%>
-                <li>i.content</li>
+                <p>
+                    <li><%=i.content%></li>
+                    <br>
+                    <small>
+                        <%=i.user.name%>
+                    </small>
+                </p>
                 <%}%>
         </ul>
     </div>
