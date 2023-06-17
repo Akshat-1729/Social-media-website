@@ -5,6 +5,7 @@ console.log("router loaded");
 router.get('/',homeController.home);
 router.use('/user',require('./user'));
 router.use('/post',require('./post'));
+router.use('/comments',require('./comment'));
 //for any further routes , access from here
 //router.use('/routerName',require());
 module.exports=router;
