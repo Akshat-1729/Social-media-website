@@ -27,6 +27,20 @@
                             <button type="submit">Add Comment</button>
                         </form>
                         <%}%>
+                        <div class="post-comment-list">
+                            <ul id="post-comments-<%=i._id%>">
+                                <%for(comment of i.comments){%>
+                                    <p>
+                                        <%=comment.content%>
+                                        <br>
+                                        <small>
+                                            <%=comment.user.name%>
+                                        </small>
+                                    </p>
+                                    
+                                    <%}%>
+                            </ul>
+                        </div>
                 </div>
                 <%}%>
         </ul>

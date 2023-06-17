@@ -15,7 +15,7 @@ module.exports.home=function(req,res){
     //     console.log('Error in fetching posts');
     // })
     //populationg the user of each post
-    Post.find({}).populate('user').exec().
+    Post.find({}).populate('user').populate({path:'comments',populate:{path:'user'}}).exec().
     then(posts=>{
         return res.render('home',{
             title:'Codial | Home',
@@ -23,7 +23,7 @@ module.exports.home=function(req,res){
         });
     })
     .catch(err=>{
-        console.log('error in fetching posts');
+        console.log('error in fetching posts',err);
     })
     
     
