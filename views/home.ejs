@@ -6,11 +6,16 @@
         <textarea name="content" cols="30" rows="3" placeholder="Type here"></textarea>
         <button type="submit">Post</button> 
     </form>
-    <%}%>
+    <%}%> 
     <div id="post-list">
         <ul>
             <%for(let i of posts){%>
                 <p>
+                    <%if((locals.user)&&(locals.user.id==i.user.id)){%>
+                    <small>
+                        <a href="/post/destroy/<%=i.id%>">X</a>
+                    </small>
+                    <%}%>
                     <li><%=i.content%></li>
                     <br>
                     
@@ -31,6 +36,7 @@
                             <ul id="post-comments-<%=i._id%>">
                                 <%for(comment of i.comments){%>
                                     <p>
+                                    
                                         <%=comment.content%>
                                         <br>
                                         <small>
