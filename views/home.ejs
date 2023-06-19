@@ -15,3 +15,11 @@
         </ul>
     </div>
 </section>
+<section id="user-friends">
+    <h4>Friends</h4>
+    <%for(let u of all_user){%>
+        <p>
+            <a href="/user/profile/<%=u.id%>"><%=u.name%></a>
+        </p>
+        <%}%>
+</section>

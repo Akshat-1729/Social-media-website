@@ -8,14 +8,14 @@ body{
 #layout-main{
     height: 100%;
 }
-ul{
+.header-footer-ul{
     list-style-type: none;
 }
-li{
+.header-footer-ul li{
     padding: 0px 5px;
     display: inline-block;
 }
-li a{
+.header-footer-ul li a{
     font-size: large;
     letter-spacing: 0.9px;
     color: aliceblue;
