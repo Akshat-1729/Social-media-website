@@ -2,12 +2,11 @@ html{
     height: 100%;
 }
 body{
-    margin: 0px;
     height: 100%;
+    margin: 0px;
 }
 #layout-main{
     height: 100%;
-    margin-bottom: 30px;
 }
 ul{
     list-style-type: none;
