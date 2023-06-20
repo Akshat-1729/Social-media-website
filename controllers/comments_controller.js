@@ -43,7 +43,7 @@ module.exports.destroy = async function (req, res) {
           await post.save();
         }
       }
-  
+   
       return res.redirect('back');
     } catch (err) {
       console.log('Error in destroying comment', err);

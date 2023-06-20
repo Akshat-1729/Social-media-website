@@ -1,19 +1,25 @@
 const User=require('../models/user');
-module.exports.profile=function(req,res){
-  User.findById(req.params.id)
-  .then(user=>{
-    return res.render('user_profile',{
-      title:'User Profile',
-      profile_user:user
+module.exports.profile=async function(req,res){
+  try{
+    User.findById(req.params.id)
+    .then(user=>{
+      return res.render('user_profile',{
+        title:'User Profile',
+        profile_user:user
+      })
     })
-  })
+  }catch(e){
+    console.log('Error occured at profile',e);
+  }
 }
 
 module.exports.update=async function(req,res){
-  try{
+  try{ 
     if(req.user.id==req.params.id){
-      User.findByIdAndUpdate(req.params.id,req.body);
-      return res.redirect('back')
+      User.findByIdAndUpdate(req.params.id,req.body)
+      .then(()=>{
+        return res.redirect('back')
+      }) 
     }
     else{
       return res.status(401).send('Unauthorized');
