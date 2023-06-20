@@ -19,11 +19,11 @@ module.exports.home= async function(req,res){
     try {
         const posts = await Post.find({})
           .populate('user')
-          .populate({ path: 'comments', populate: { path: 'user' } }).exec();
+          .populate({ path: 'comments', populate: { path: 'user' } });
       
-        const users = await User.find({}).exec();
-      
-        res.render('home', {
+        const users = await User.find({});
+
+        return res.render('home', {
           title: 'Codial | Home',
           posts: posts,
           all_user: users,
