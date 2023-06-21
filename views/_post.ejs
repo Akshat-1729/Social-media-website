@@ -2,7 +2,7 @@
     <p>
         <%if((locals.user)&&(locals.user.id==i.user.id)){%>
         <small>
-            <a href="/post/destroy/<%=i.id%>">X</a>
+            <a class="delete-post-button" href="/post/destroy/<%=i.id%>">X</a>
         </small>
         <%}%>
         <li><%=i.content%></li>
