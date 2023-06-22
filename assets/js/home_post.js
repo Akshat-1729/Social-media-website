@@ -11,8 +11,9 @@
                 data:newPostForm.serialize(),
                 success:function(data){
                     let newPost=newPostDom(data.data.post);
-                    $('#post-list>ul').prepend(newPost)
-                    deletepost($('.delete-post-button',newPost))
+                    $('#post-list>ul').prepend(newPost);
+                    deletepost($('.delete-post-button', newPost));
+                    
                     new Noty({
                         theme:"relax",
                         text:"Post Uploaded",
@@ -27,6 +28,7 @@
                 }
             })
         })
+        
     }
     let newPostDom=function(i){
         return $(`<li id="post-${i._id}">
@@ -40,12 +42,11 @@
             
             <small>
                 ${i.user.name}
-                <%= i.createdAt.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'Asia/Kolkata' }) %>
             </small>
         </p>
         <div class="post-comments">
            
-                <form action="/comments/create" method="POST">
+                <form id="comment-form-${i._id}" action="/comments/create" method="POST">
                     <input type="text" name="content" placeholder="Type here to add comment">
                     <input type="hidden" name="post" value="${i._id}">
                     <button type="submit">Add Comment</button>
@@ -94,7 +95,10 @@
             //selects the .delete-post-button of current li
             let deleteButton=$('.delete-post-button',current);
             deletepost(deleteButton);
-        })
+
+            let postId=current.prop('id').split("-")[1]
+            new PostComments(postId)
+        }) 
     }
     createPost();
     convertPostsToAjax();
