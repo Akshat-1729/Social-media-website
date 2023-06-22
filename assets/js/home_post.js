@@ -13,7 +13,7 @@
                     let newPost=newPostDom(data.data.post);
                     $('#post-list>ul').prepend(newPost);
                     deletepost($('.delete-post-button', newPost));
-                    
+                    new PostComments(data.data.post._id);
                     new Noty({
                         theme:"relax",
                         text:"Post Uploaded",
