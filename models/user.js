@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const multer=require('multer');
 const path=require('path');
-const Avatar_Path=path.join('/uploads/user/avatar');
+const Avatar_Path=path.join('/uploads/users/avatars');
 const userSchema=new mongoose.Schema({
     email:{
         type:String,
