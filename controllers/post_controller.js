@@ -2,14 +2,18 @@ const Post=require('../models/post');
 const Comment=require('../models/comment');
 module.exports.create=async function(req,res){
     try{
+        
          let post=await Post.create({
             content:req.body.content,
             user:req.user._id
         });
         if(req.xhr){
+            
+            post = await post.populate('user', 'name');
+            
             return res.status(200).json({
                 data:{
-                    post:post
+                    postob:post
                 },
                 message:'Post created!'
             });
@@ -17,6 +21,7 @@ module.exports.create=async function(req,res){
         req.flash('success','Post uploaded');
         return res.redirect('back');
     }catch(err){
+        console.log('error *****************',err)
         req.flash('error',err)
         return res.redirect('back');
     }

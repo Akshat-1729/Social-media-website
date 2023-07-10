@@ -11,10 +11,11 @@
                 data:newPostForm.serialize(),
                 success:function(data){
                     console.log(data);
-                    let newPost=newPostDom(data.data.post);
+                    let newPost=newPostDom(data.data.postob);
+                    // console.log(data.data.postob);
                     $('#post-list>ul').prepend(newPost);
                     deletepost($('.delete-post-button', newPost));
-                    new PostComments(data.data.post._id);
+                    new PostComments(data.data.postob._id);
                     new Noty({
                         theme:"relax",
                         text:"Post Uploaded",
