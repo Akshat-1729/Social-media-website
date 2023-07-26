@@ -1,4 +1,6 @@
 const express=require('express');
+
+
 const cookieParser=require('cookie-parser');
 const app=express();
 const port =7000;
@@ -13,7 +15,11 @@ const passportGoogle=require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
 const flash=require('connect-flash');
 const customWAre=require('./config/middleware');
-
+//setup the chat server
+const chatServer=require('http').Server(app);
+const chatSockets=require('./config/chat_socet').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is running on port 5000')
 
 app.use(express.urlencoded());
 app.use(cookieParser());

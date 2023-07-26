@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat_box.css">
 <div id="home-content">
   <section id="feed-posts">
     <h4>Posts</h4>
@@ -27,6 +28,14 @@
     </p>
     <%}%>
   </section>
+  <%-include('_chat_box')-%>
 </div>
 <script src="/js/home_post_comment.js"></script>
 <script src="/js/home_post.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js"></script>
+<script src="/js/chatengine.js"></script>
+<%if(locals.user){%>
+<script>
+  new ChatEngine('user-chat-box','<%=locals.user.email%>')
+</script>
+<%}%>

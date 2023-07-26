@@ -1,0 +1,30 @@
+#user-chat-box{
+    border: 1px solid red;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 1px dashed grey;
+    height: 350px;
+    width: 300px;
+    background: white;
+    padding: 5px;
+    box-shadow: 1px 1px 1px 1px lightgrey; 
+}
+#chat-messages-list {
+    list-style: none;
+    padding: 10px;
+    height: 70%;
+    background-color: white;
+    overflow: auto; 
+}
+.other-message{
+    text-align: left;
+}
+.self-message{
+    text-align: right;
+}
+span{
+    display: inline-block;
+    padding: 15px;
+    background-color: aqua;
+}
