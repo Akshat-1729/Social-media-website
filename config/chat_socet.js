@@ -12,5 +12,13 @@ module.exports.chatSockets = function (socketServer) {
   // Your existing socket.io code here
   io.sockets.on('connection', function (socket) {
     console.log('new connection received', socket.id);
+    socket.on('disconnect',function(){
+        console.log('socket disconnected')
+    });
+    socket.on('join_room',function(data){
+        console.log('joining request recieved',data);
+        socket.join(data.chatroom);
+        io.in(data.chatroom).emit('User_joined',data);
+    })
   });
 };
