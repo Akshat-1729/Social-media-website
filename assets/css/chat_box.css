@@ -1,20 +1,19 @@
 #user-chat-box{
-    border: 1px solid red;
+    border-radius: 7px;
     position: fixed;
     bottom: 10px;
     right: 10px;
-    border: 1px dashed grey;
     height: 350px;
     width: 300px;
-    background: white;
+    background-image: url('../images/chat_bg.jpg');
+    background-size: cover;
     padding: 5px;
-    box-shadow: 1px 1px 1px 1px lightgrey; 
 }
 #chat-messages-list {
     list-style: none;
     padding: 10px;
     height: 70%;
-    background-color: white;
+    
     overflow: auto; 
 }
 .other-message{
@@ -23,8 +22,41 @@
 .self-message{
     text-align: right;
 }
-span{
+.other-message span{
+    font-size: small;
+    font-family: cursive;
+    border-radius: 17px;
     display: inline-block;
     padding: 15px;
-    background-color: aqua;
+    background: linear-gradient(45deg,rgb(171, 13, 244) 55%,rgb(121, 6, 244) 100%);
+}
+.self-message span{
+    font-size: small;
+    font-family: cursive;
+    border-radius: 17px;
+    display: inline-block;
+    padding: 15px;
+    background: linear-gradient(45deg,rgb(244, 86, 13) 55%,rgb(244, 6, 117) 100%);
+}
+#chat-input{
+    margin-top: 40px;
+}
+#chat-input input{
+    margin-left: 2px;
+    width: 79%;
+    height: 19px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background-color:#e1f2ff;
+    font-family: cursive;
+}
+#chat-input button{
+    border: none;
+    border-radius: 5px;
+    height: 28px;
+    width: 17.5%;
+    background-color: rgb(94, 181, 255);
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
