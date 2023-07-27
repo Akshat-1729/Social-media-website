@@ -2,6 +2,9 @@ html{
     height: 100%;
 }
 body{
+    background-image: url('../images/Free\ Vector\ _\ Coloured\ paint\ stains\ collection.jpg');
+    background-repeat: no-repeat;
+    background-size: 1200px;
     height: 100%;
     margin: 0px;
 }

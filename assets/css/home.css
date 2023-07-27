@@ -10,3 +10,26 @@
     padding: 10px;
     border-left: 2px solid rgb(190, 185, 185);
 }
+h3{
+    margin-bottom: 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: rgb(46, 3, 83);
+}
+#user-friends a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid purple;
+    padding: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.friend-name{
+    display:block;
+    transition: 0.3s ease-in-out;
+    transform-origin:center left;
+}
+.friend-name:hover{
+    transform: scale(1.5);
+}
+

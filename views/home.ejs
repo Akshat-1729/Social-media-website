@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/css/chat_box.css">
 <div id="home-content">
   <section id="feed-posts">
-    <h4>Posts</h4>
+    <h3>Posts</h3>
     <%if(locals.user){%>
     <form action="/post/create" id="new-post-form" method="post">
       <textarea
@@ -21,9 +21,9 @@
     </div>
   </section>
   <section id="user-friends">
-    <h4>Friends</h4>
+    <h3>Friends</h3>
     <%for(let u of all_user){%>
-    <p>
+    <p class="friend-name" style="width:fit-content;">
       <a href="/user/profile/<%=u.id%>"><%=u.name%></a>
     </p>
     <%}%>
