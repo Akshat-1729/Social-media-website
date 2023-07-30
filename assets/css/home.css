@@ -32,4 +32,23 @@ h3{
 .friend-name:hover{
     transform: scale(1.5);
 }
-
+textarea{
+    border-radius: 7px;
+    background: linear-gradient(135deg,rgb(253, 208, 208),rgb(212, 212, 255));
+    box-shadow: 0px 0px 10px 1px rgb(204, 143, 255);
+    border: 1px solid rgb(242, 139, 173);
+    outline: none;
+    padding: 5px;
+    resize: none;
+    transition: 0.5s ease-in-out;
+}
+textarea:hover{
+    box-shadow: 0px 0px 15px 2px rgb(184, 100, 252);
+}
+textarea::placeholder{
+    color: rgb(135, 133, 133);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#post-list ul{
+    list-style-type:none;
+}

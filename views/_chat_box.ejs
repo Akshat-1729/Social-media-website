@@ -1,18 +1,37 @@
 <%if(locals.user){%>
-    <div id="user-chat-box">
-        <ul id="chat-messages-list">
-            <li class="other-message">
-                
-            </li>
-            <li class="self-message">
-                
-            </li>
-        </ul>
-        <div id="chat-input">
-            <input type="text" id="message-input" placeholder="Message">
-            <button id="send-button" type="submit">Send</button>
-        </div>
-    </div>
-    
-    
-    <%}%>
+<div id="user-chat-box">
+  <ul id="chat-messages-list">
+    <li class="other-message"></li>
+    <li class="self-message"></li>
+  </ul>
+  <div id="chat-input">
+    <input type="text" id="message-input" placeholder="Message" />
+    <button id="send-button" type="submit">Send</button>
+  </div>
+</div>
+<script>
+  const chatBox = document.getElementById("user-chat-box");
+  let isDragging = false;
+  let initialX;
+  let initialY;
+  chatBox.addEventListener("dblclick", (e) => {
+    isDragging = true;
+    initialX = e.clientX - chatBox.getBoundingClientRect().left;
+    initialY = e.clientY - chatBox.getBoundingClientRect().top;
+  });
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      const newX = e.clientX - initialX;
+      const newY = e.clientY - initialY;
+      chatBox.style.left = `${newX}px`;
+      chatBox.style.top = `${newY}px`;
+    }
+  });
+
+  // Function to stop dragging when the mouse button is released
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+</script>
+
+<%}%>
