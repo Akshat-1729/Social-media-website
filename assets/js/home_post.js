@@ -1,8 +1,11 @@
 {
     //method to submit form using ajax
     let createPost=function(){
+        let post_text=$('#post-textarea');
+
         let newPostForm=$('#new-post-form');
         newPostForm.submit(function(e){
+            
             e.preventDefault();
 
             $.ajax({
@@ -23,6 +26,7 @@
                         layout:'topRight',
                         timeout:1500
                     }).show();
+                    post_text.val('');
                     
                 },
                 error:function(error){
@@ -35,11 +39,14 @@
     let newPostDom=function(i){
         return $(`<li id="post-${i._id}">
         <p>
+        <i class="fa-solid fa-star fa-beat-fade"></i>
+        <span class="post-content">
+        ${i.content}
+        </span>
             
             <small>
-                <a class="delete-post-button" href="/post/destroy/${i._id}">X</a>
+                <a class="delete-post-button" href="/post/destroy/${i._id}"><i class="fa-solid fa-trash"></i></a>
             </small>
-            ${i.content}
             <br> 
             
             <small>

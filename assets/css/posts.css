@@ -1,12 +1,32 @@
 .fa-trash{
     color: rgb(104, 70, 182);
-    margin-left: 25px;
+    margin-left: 105px;
+    
+}
+.delete-comment-button i{
+    color: rgb(68, 25, 169);
+    margin-left: 15px;
+    font-size: 13px;
 }
 .fa-beat-fade{
     margin-left: -24px;
-    color: rgb(162, 61, 202);
+    color: rgb(255, 75, 135);
+    font-size: 13px;
 }
 .fa-comment{
-    margin-left: -22px;
+    margin-left: -20px;
     color: rgb(150, 2, 2);
+}
+.post-content{
+    color: white;
+    padding: 8px;
+    border-radius: 13px;
+    border-bottom-left-radius: 0px;
+    background: linear-gradient(45deg,rgb(233, 46, 46),rgb(244, 132, 34));
+}
+small{
+    position: relative;
+    top: 4px;
+    font-family: cursive;
+    color: rgb(95, 78, 255);
 }

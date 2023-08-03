@@ -13,6 +13,7 @@ class PostComments{
     }
     createComment(postId){
         let pself=this;
+        let comText=$('.comment-text');
         this.newCommentForm.off('submit');
         this.newCommentForm.submit(function(e){
             e.preventDefault();
@@ -33,6 +34,7 @@ class PostComments{
                         timeout: 1500
                         
                     }).show();
+                    comText.val('');
                 },
                 error:function(error){
                     console.log(error.responseText)
@@ -46,9 +48,10 @@ class PostComments{
         return $(`<li id="comment-${comment._id}">
         <p>
             
-                <a class="delete-comment-button" href="/comments/destroy/${comment._id}">X</a>
+                <i class="fa-regular fa-comment"></i>
+                ${comment.content}
+                <a class="delete-comment-button" href="/comments/destroy/${comment._id}"><i class="fa-solid fa-trash delete-comm"></i></a>
                 
-            ${comment.content}
             <br>
             <small>
                 ${comment.user.name}

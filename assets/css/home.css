@@ -52,3 +52,8 @@ textarea::placeholder{
 #post-list ul{
     list-style-type:none;
 }
+.post-comment-list ul{
+    margin-top: 5px;
+    max-height: 140px;
+    overflow-y: auto;
+}

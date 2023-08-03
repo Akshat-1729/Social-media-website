@@ -1,7 +1,9 @@
 <li id="post-<%=i._id%>">
     <p>
         <i class="fa-solid fa-star fa-beat-fade"></i>
-        <%=i.content%>
+        <span class="post-content">
+            <%=i.content%>
+        </span>
         <%if((locals.user)&&(locals.user.id==i.user.id)){%>
         <small>
             <a class="delete-post-button" href="/post/destroy/<%=i.id%>"><i class="fa-solid fa-trash"></i></a>
@@ -15,9 +17,9 @@
     <div class="post-comments">
         <%if(locals.user){%>
             <form id="comment-form-<%=i._id%>" action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type here to add comment">
+                <input class="comment-text" type="text" name="content" placeholder="Comment here">
                 <input type="hidden" name="post" value="<%=i._id%>">
-                <button type="submit">Add Comment</button>
+                <button class="comment-button" type="submit">Comment</button>
             </form>
             <%}%>
             <div class="post-comment-list">

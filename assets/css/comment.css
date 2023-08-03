@@ -1,0 +1,23 @@
+.comment-text{
+    border: none;
+    height: 20px;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 1px solid rgb(126, 12, 255);
+    border-radius: 3px;
+    padding: 3px;
+    background-color: rgba(223, 203, 255, 0.497);
+}
+.comment-name{
+    color: rgb(137, 149, 243);
+}
+.comment-button{
+    margin-left: 20px;
+    background-color: rgba(245, 245, 245, 0.247);
+    border: none;
+    outline: none;
+    border: 1.5px solid rgb(165, 160, 255);
+    box-shadow: 0px 0px 9px 2px lightblue;
+    padding: 7px;
+    font-weight: bold;
+}

@@ -1,13 +1,16 @@
-<li id="comment-<%=comment._id%>">
+<li class="comment" id="comment-<%=comment._id%>">
     <p>
-        <i class="fa-regular fa-comment"></i>
-        <%=comment.content%>
+            <i class="fa-regular fa-comment"></i>
+            <span class="comment-contents">
+                <%=comment.content%> 
+            </span>
         <%if((locals.user)&&(locals.user.id==comment.user.id)){%>
-            <a class="delete-comment-button" href="/comments/destroy/<%=comment._id%>"><i class="fa-solid fa-trash"></i></a>
+            <a class="delete-comment-button" href="/comments/destroy/<%=comment._id%>"><i class="fa-solid fa-trash delete-comm"></i></a>
             <%}%>
         <br>
-        <small>
+        <small class="comment-name">
             <%=comment.user.name%>
         </small>
     </p>
 </li>
+
