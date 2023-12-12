@@ -6,18 +6,26 @@
     border-bottom: 1px solid rgb(126, 12, 255);
     border-radius: 3px;
     padding: 3px;
-    background-color: rgba(223, 203, 255, 0.497);
+    color: rgb(209, 198, 253);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0px 0px 1px whitesmoke;
 }
 .comment-name{
     color: rgb(137, 149, 243);
 }
 .comment-button{
     margin-left: 20px;
-    background-color: rgba(245, 245, 245, 0.247);
+    background-color: transparent;
+    color: snow;
     border: none;
     outline: none;
     border: 1.5px solid rgb(165, 160, 255);
     box-shadow: 0px 0px 9px 2px lightblue;
     padding: 7px;
     font-weight: bold;
+}
+.comment-contents{
+    color: rgb(220, 191, 235);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }

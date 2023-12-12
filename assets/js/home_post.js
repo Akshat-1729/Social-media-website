@@ -39,7 +39,7 @@
     let newPostDom=function(i){
         return $(`<li id="post-${i._id}">
         <p>
-        <i class="fa-solid fa-star fa-beat-fade"></i>
+        
         <span class="post-content">
         ${i.content}
         </span>
@@ -56,9 +56,14 @@
         <div class="post-comments">
            
                 <form id="comment-form-${i._id}" action="/comments/create" method="POST">
-                    <input type="text" name="content" placeholder="Type here to add comment">
+                <input
+                class="comment-text"
+                type="text"
+                name="content"
+                placeholder="Comment here"
+              />
                     <input type="hidden" name="post" value="${i._id}">
-                    <button type="submit">Add Comment</button>
+                    <button class="comment-button" type="submit">Comment</button>
                 </form>
              
                 <div class="post-comment-list">
